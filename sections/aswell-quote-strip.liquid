@@ -1,0 +1,30 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    <blockquote class="quote-strip">
+      <p>{{ section.settings.quote }}</p>
+      {% if section.settings.author != blank %}<cite>{{ section.settings.author }}</cite>{% endif %}
+    </blockquote>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well quote strip",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "text", "id": "quote", "label": "Quote", "default": "Consistency makes progress feel effortless." },
+    { "type": "text", "id": "author", "label": "Author", "default": "As Well" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "presets": [
+    { "name": "As Well quote strip" }
+  ]
+}
+{% endschema %}

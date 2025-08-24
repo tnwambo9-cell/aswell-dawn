@@ -1,0 +1,47 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    <div class="testimonials">
+      {% for block in section.blocks %}
+        <blockquote class="testimonial" {{ block.shopify_attributes }}>
+          <p>{{ block.settings.quote }}</p>
+        </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well testimonials",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        { "type": "text", "id": "quote", "label": "Quote" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Well testimonials",
+      "blocks": [
+        { "type": "quote", "settings": { "quote": "My morning coffee, but balanced." } },
+        { "type": "quote", "settings": { "quote": "Fuller for longer—without the chalky shakes." } },
+        { "type": "quote", "settings": { "quote": "Evenings are calmer; late-night snacking is down." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    <div class="grid grid--2-col">
+      <div>
+        {% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+      <div>
+        {% if section.settings.copy != blank %}<div class="rte">{{ section.settings.copy }}</div>{% endif %}
+        {% if section.settings.microcopy != blank %}<p class="microcopy">{{ section.settings.microcopy }}</p>{% endif %}
+        {% if section.settings.show_icons %}
+          <div class="icon-row">
+            {% for block in section.blocks %}
+              <div class="icon-row__item" {{ block.shopify_attributes }}>
+                {% if block.settings.icon != blank %}<img src="{{ block.settings.icon | default: 'https://via.placeholder.com/64x64' }}" alt="{{ block.settings.label }}">{% endif %}
+                {% if block.settings.label != blank %}<p>{{ block.settings.label }}</p>{% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well how it works",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The simple ritual" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Sprinkle • Stir • Savour" },
+    { "type": "richtext", "id": "copy", "label": "Copy", "default": "<p>Our blends dissolve instantly in drinks and sprinkle seamlessly on food. The texture disappears; flavour stays true. Use once or twice daily—breakfast porridge, a smoothie, an iced coffee, or your evening yoghurt.</p>" },
+    { "type": "text", "id": "microcopy", "label": "Microcopy", "default": "Free from sugars and artificial sweeteners. Keto-friendly." },
+    { "type": "checkbox", "id": "show_icons", "label": "Show icon row", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "label", "label": "Label" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "As Well how it works" }
+  ]
+}
+{% endschema %}
