@@ -1,0 +1,9 @@
+[
+  {
+    "name": "theme_info",
+    "settings": [
+      { "type": "header", "content": "Dawn" },
+      { "type": "paragraph", "content": "Default settings schema" }
+    ]
+  }
+]
