@@ -8,8 +8,8 @@
         "price": { "type": "price", "settings": {} },
         "variant_picker": { "type": "variant_picker", "settings": {} },
         "buy_buttons": { "type": "buy_buttons", "settings": {} },
-        "description": { "type": "description", "settings": {} },
-        "how_to_use": { "type": "text", "settings": { "text": "1–2 gummies when needed. Avoid within 6 hours of sleep." } }
+        "description": { "type": "text", "settings": { "text": "<ul><li>B-vitamins</li><li>L-Theanine</li><li>Natural caffeine (green coffee)</li></ul>" } },
+        "how_to_use": { "type": "text", "settings": { "text": "Take 1–2 gummies when needed. Avoid within 6 hours of sleep." } }
       },
       "block_order": ["title", "price", "variant_picker", "buy_buttons", "description", "how_to_use"]
     }

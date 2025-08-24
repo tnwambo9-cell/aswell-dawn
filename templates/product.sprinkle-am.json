@@ -8,7 +8,7 @@
         "price": { "type": "price", "settings": {} },
         "variant_picker": { "type": "variant_picker", "settings": {} },
         "buy_buttons": { "type": "buy_buttons", "settings": {} },
-        "description": { "type": "description", "settings": {} },
+        "description": { "type": "text", "settings": { "text": "<ul><li>GLP-1 Support</li><li>Hydration</li><li>Appetite Control</li></ul>" } },
         "how_to_use": { "type": "text", "settings": { "text": "Sprinkle one scoop into any drink or onto food; stir and enjoy. Once daily to start; increase to twice daily if desired. Tastes neutral." } }
       },
       "block_order": ["title", "price", "variant_picker", "buy_buttons", "description", "how_to_use"]

@@ -30,7 +30,7 @@
         "enabled": true,
         "eyebrow": "Everyday nourishment, elegantly done",
         "title": "Feel lighter. Live As Well.",
-        "body": "<p>Our quiet daily rituals—dissolving Sprinkle blends and Wake Gummies—pair premium fibres with electrolytes, probiotics and thoughtful actives. Keto-friendly, sugar-free and crafted to support hydration, appetite control and a steadier day.</p>",
+        "body": "<p>Our quiet daily rituals—dissolving Sprinkle blends and Wake Gummies—pair premium fibres with electrolytes, probiotics and thoughtful actives. Keto-friendly, sugar-free.</p>",
         "image_desktop": "https://via.placeholder.com/1600x900",
         "image_mobile": "https://via.placeholder.com/800x800",
         "cta_label": "Shop the collection",
@@ -57,7 +57,7 @@
             "bullet_1": "GLP-1 Support",
             "bullet_2": "Hydration",
             "bullet_3": "Appetite Control",
-            "footnote": "With Chromium & Green Coffee. Vegan • Non-GMO • Sugar-free",
+            "footnote": "With Chromium & Green Coffee. Vegan • Sugar-free",
             "cta_label": "Shop Sprinkle Blend →",
             "cta_url": "/products/sprinkle-am",
             "image": "https://via.placeholder.com/600x600"
@@ -71,7 +71,7 @@
             "bullet_1": "GLP-1 Support",
             "bullet_2": "Hydration",
             "bullet_3": "Appetite Control",
-            "footnote": "With Magnesium & Chamomile extract. Vegan • Non-GMO • Sugar-free",
+            "footnote": "With Magnesium & Chamomile extract. Vegan • Sugar-free",
             "cta_label": "Shop Sprinkle Blend →",
             "cta_url": "/products/sprinkle-pm",
             "image": "https://via.placeholder.com/600x600"
@@ -85,7 +85,7 @@
             "bullet_1": "B-vitamins",
             "bullet_2": "L-Theanine",
             "bullet_3": "Natural caffeine (green coffee)",
-            "footnote": "Vegan • Non-GMO • Sugar-free",
+            "footnote": "Vegan • Sugar-free",
             "cta_label": "Shop Wake Gummies →",
             "cta_url": "/products/wake-gummies",
             "image": "https://via.placeholder.com/600x600"
@@ -173,8 +173,7 @@
         "quote-2": { "type": "quote", "settings": { "quote": "Fuller for longer—without the chalky shakes." } },
         "quote-3": { "type": "quote", "settings": { "quote": "Evenings are calmer; late-night snacking is down." } }
       },
-      "block_order": ["quote-1", "quote-2", "quote-3"],
-      "disabled": true
+      "block_order": ["quote-1", "quote-2", "quote-3"]
     },
     "aswell-editorial-block": {
       "type": "aswell-editorial-block",

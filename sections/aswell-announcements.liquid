@@ -4,18 +4,10 @@
     {% for block in section.blocks %}
       <div class="announcement-bar" {{ block.shopify_attributes }}>
         <p>{{ block.settings.text }}</p>
-        <button type="button" class="announcement-bar__close" aria-label="Dismiss">&times;</button>
       </div>
     {% endfor %}
   </div>
 </section>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.announcement-bar__close').forEach(function(btn){
-      btn.addEventListener('click', function(){ btn.parentElement.style.display = 'none'; });
-    });
-  });
-</script>
 {% endif %}
 
 {% schema %}
