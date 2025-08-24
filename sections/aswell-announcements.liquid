@@ -1,0 +1,52 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width announcement-wrapper">
+    {% for block in section.blocks %}
+      <div class="announcement-bar" {{ block.shopify_attributes }}>
+        <p>{{ block.settings.text }}</p>
+        <button type="button" class="announcement-bar__close" aria-label="Dismiss">&times;</button>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.announcement-bar__close').forEach(function(btn){
+      btn.addEventListener('click', function(){ btn.parentElement.style.display = 'none'; });
+    });
+  });
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well announcements",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":0, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":0, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Well announcements",
+      "blocks": [
+        { "type": "announcement", "settings": { "text": "Complimentary standard shipping on UK orders over £50." } },
+        { "type": "announcement", "settings": { "text": "Enjoy a free 10-serve sample with orders over £100—while stocks last." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

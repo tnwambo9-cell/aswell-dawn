@@ -1,0 +1,55 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    {% if section.settings.section_title != blank %}<h2>{{ section.settings.section_title }}</h2>{% endif %}
+    <div class="grid grid--3-col">
+      {% for block in section.blocks %}
+        <div class="benefit" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}<img src="{{ block.settings.icon | default: 'https://via.placeholder.com/64x64' }}" alt="{{ block.settings.title }}">{% endif %}
+          {% if block.settings.title != blank %}<h3>{{ block.settings.title }}</h3>{% endif %}
+          {% if block.settings.copy != blank %}<p>{{ block.settings.copy }}</p>{% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    {% if section.settings.disclaimer != blank %}<p class="disclaimer">{{ section.settings.disclaimer }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well benefits",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "text", "id": "section_title", "label": "Title", "default": "Designed for daily support" },
+    { "type": "text", "id": "disclaimer", "label": "Disclaimer", "default": "As Well products are food supplements. They are not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare professional if using prescription medication." },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "text", "id": "copy", "label": "Copy" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Well benefits",
+      "blocks": [
+        { "type": "benefit", "settings": { "title": "GLP-1 Support", "copy": "Fibre diversity and key minerals to complement fullness pathways.*", "icon": "https://via.placeholder.com/64x64" } },
+        { "type": "benefit", "settings": { "title": "Hydration", "copy": "Sodium-balanced electrolytes to help water where it counts.", "icon": "https://via.placeholder.com/64x64" } },
+        { "type": "benefit", "settings": { "title": "Appetite Control", "copy": "Premium fibres for gentle satiety without heaviness.", "icon": "https://via.placeholder.com/64x64" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,219 @@
+{
+  "sections": {
+    "aswell-announcements": {
+      "type": "aswell-announcements",
+      "settings": {
+        "enabled": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "background": "light"
+      },
+      "blocks": {
+        "announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Complimentary standard shipping on UK orders over £50."
+          }
+        },
+        "announcement-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "Enjoy a free 10-serve sample with orders over £100—while stocks last."
+          }
+        }
+      },
+      "block_order": ["announcement-1", "announcement-2"]
+    },
+    "aswell-hero": {
+      "type": "aswell-hero",
+      "settings": {
+        "enabled": true,
+        "eyebrow": "Everyday nourishment, elegantly done",
+        "title": "Feel lighter. Live As Well.",
+        "body": "<p>Our quiet daily rituals—dissolving Sprinkle blends and Wake Gummies—pair premium fibres with electrolytes, probiotics and thoughtful actives. Keto-friendly, sugar-free and crafted to support hydration, appetite control and a steadier day.</p>",
+        "image_desktop": "https://via.placeholder.com/1600x900",
+        "image_mobile": "https://via.placeholder.com/800x800",
+        "cta_label": "Shop the collection",
+        "cta_url": "/collections/all",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      }
+    },
+    "aswell-product-tiles": {
+      "type": "aswell-product-tiles",
+      "settings": {
+        "enabled": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      },
+      "blocks": {
+        "tile-1": {
+          "type": "tile",
+          "settings": {
+            "title": "As Well Sprinkle Blend",
+            "subline": "6+ Premium Fibres • Electrolytes • Probiotics",
+            "bullet_1": "GLP-1 Support",
+            "bullet_2": "Hydration",
+            "bullet_3": "Appetite Control",
+            "footnote": "With Chromium & Green Coffee. Vegan • Non-GMO • Sugar-free",
+            "cta_label": "Shop Sprinkle Blend →",
+            "cta_url": "/products/sprinkle-am",
+            "image": "https://via.placeholder.com/600x600"
+          }
+        },
+        "tile-2": {
+          "type": "tile",
+          "settings": {
+            "title": "As Well Sprinkle Blend – Evening",
+            "subline": "Same gentle base, a calmer finish",
+            "bullet_1": "GLP-1 Support",
+            "bullet_2": "Hydration",
+            "bullet_3": "Appetite Control",
+            "footnote": "With Magnesium & Chamomile extract. Vegan • Non-GMO • Sugar-free",
+            "cta_label": "Shop Sprinkle Blend →",
+            "cta_url": "/products/sprinkle-pm",
+            "image": "https://via.placeholder.com/600x600"
+          }
+        },
+        "tile-3": {
+          "type": "tile",
+          "settings": {
+            "title": "As Well Wake Gummies",
+            "subline": "Clean lift, no jitters",
+            "bullet_1": "B-vitamins",
+            "bullet_2": "L-Theanine",
+            "bullet_3": "Natural caffeine (green coffee)",
+            "footnote": "Vegan • Non-GMO • Sugar-free",
+            "cta_label": "Shop Wake Gummies →",
+            "cta_url": "/products/wake-gummies",
+            "image": "https://via.placeholder.com/600x600"
+          }
+        }
+      },
+      "block_order": ["tile-1", "tile-2", "tile-3"]
+    },
+    "aswell-category-grid": {
+      "type": "aswell-category-grid",
+      "settings": {
+        "enabled": true,
+        "section_title": "Discover by category",
+        "section_copy": "Browse by intention and let the rest be simple.",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      },
+      "blocks": {
+        "link-1": { "type": "link", "settings": { "title": "Hydration & Electrolytes", "url": "/collections/hydration" } },
+        "link-2": { "type": "link", "settings": { "title": "Appetite & Satiety", "url": "/collections/appetite" } },
+        "link-3": { "type": "link", "settings": { "title": "Energy & Focus", "url": "/collections/energy" } },
+        "link-4": { "type": "link", "settings": { "title": "Gut & Regularity", "url": "/collections/gut" } },
+        "link-5": { "type": "link", "settings": { "title": "Keto-Friendly", "url": "/collections/keto" } },
+        "link-6": { "type": "link", "settings": { "title": "Bundles", "url": "/collections/bundles" } }
+      },
+      "block_order": ["link-1", "link-2", "link-3", "link-4", "link-5", "link-6"]
+    },
+    "aswell-how-it-works": {
+      "type": "aswell-how-it-works",
+      "settings": {
+        "enabled": true,
+        "eyebrow": "The simple ritual",
+        "title": "Sprinkle • Stir • Savour",
+        "copy": "<p>Our blends dissolve instantly in drinks and sprinkle seamlessly on food. The texture disappears; flavour stays true. Use once or twice daily—breakfast porridge, a smoothie, an iced coffee, or your evening yoghurt.</p>",
+        "microcopy": "Free from sugars and artificial sweeteners. Keto-friendly.",
+        "show_icons": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      }
+    },
+    "aswell-benefits": {
+      "type": "aswell-benefits",
+      "settings": {
+        "enabled": true,
+        "section_title": "Designed for daily support",
+        "disclaimer": "As Well products are food supplements. They are not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare professional if using prescription medication.",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      },
+      "blocks": {
+        "benefit-1": { "type": "benefit", "settings": { "title": "GLP-1 Support", "copy": "Fibre diversity and key minerals to complement fullness pathways.*", "icon": "https://via.placeholder.com/64x64" } },
+        "benefit-2": { "type": "benefit", "settings": { "title": "Hydration", "copy": "Sodium-balanced electrolytes to help water where it counts.", "icon": "https://via.placeholder.com/64x64" } },
+        "benefit-3": { "type": "benefit", "settings": { "title": "Appetite Control", "copy": "Premium fibres for gentle satiety without heaviness.", "icon": "https://via.placeholder.com/64x64" } }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3"]
+    },
+    "aswell-ingredient-spotlight": {
+      "type": "aswell-ingredient-spotlight",
+      "settings": {
+        "enabled": true,
+        "eyebrow": "Hero ingredients",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      },
+      "blocks": {
+        "item-1": { "type": "item", "settings": { "title": "Chromium • the quiet stabiliser", "copy": "<p>Included as chromium picolinate, this trace mineral supports normal macronutrient metabolism and helps maintain normal blood glucose levels—useful alongside high-fibre satiety.*</p>", "image": "https://via.placeholder.com/800x800" } },
+        "item-2": { "type": "item", "settings": { "title": "Green Coffee • clean lift, calm edge", "copy": "<p>Naturally occurring polyphenols with a gentle caffeine profile. In our Sprinkle Blend it remains taste-neutral; in Wake Gummies it brings focus without the spike.*</p>", "image": "https://via.placeholder.com/800x800" } }
+      },
+      "block_order": ["item-1", "item-2"]
+    },
+    "aswell-testimonials": {
+      "type": "aswell-testimonials",
+      "settings": {
+        "enabled": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      },
+      "blocks": {
+        "quote-1": { "type": "quote", "settings": { "quote": "My morning coffee, but balanced." } },
+        "quote-2": { "type": "quote", "settings": { "quote": "Fuller for longer—without the chalky shakes." } },
+        "quote-3": { "type": "quote", "settings": { "quote": "Evenings are calmer; late-night snacking is down." } }
+      },
+      "block_order": ["quote-1", "quote-2", "quote-3"],
+      "disabled": true
+    },
+    "aswell-editorial-block": {
+      "type": "aswell-editorial-block",
+      "settings": {
+        "enabled": true,
+        "eyebrow": "The As Well approach",
+        "title": "Fewer products, better rituals",
+        "body": "<p>We design essentials that disappear into your day—quiet formulas, transparent labels, no noise. Considered fibres, supportive electrolytes, and actives with a reason to be there. Nothing more.</p>",
+        "cta_label": "Read our standards →",
+        "cta_url": "/pages/standards",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      }
+    },
+    "aswell-quote-strip": {
+      "type": "aswell-quote-strip",
+      "settings": {
+        "enabled": true,
+        "quote": "Consistency makes progress feel effortless.",
+        "author": "As Well",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      }
+    },
+    "aswell-newsletter": {
+      "type": "aswell-newsletter",
+      "settings": {
+        "enabled": true,
+        "title": "Join the ritual",
+        "copy": "Early access to drops, behind-the-label notes, and simple how-tos.",
+        "placeholder": "Your email",
+        "button_label": "Subscribe",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "background": "light"
+      }
+    }
+  },
+  "order": ["aswell-announcements", "aswell-hero", "aswell-product-tiles", "aswell-category-grid", "aswell-how-it-works", "aswell-benefits", "aswell-ingredient-spotlight", "aswell-testimonials", "aswell-editorial-block", "aswell-quote-strip", "aswell-newsletter"]
+}

@@ -1,0 +1,55 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    {% if section.settings.section_title != blank %}<h2>{{ section.settings.section_title }}</h2>{% endif %}
+    {% if section.settings.section_copy != blank %}<p>{{ section.settings.section_copy }}</p>{% endif %}
+    <div class="grid grid--3-col">
+      {% for block in section.blocks %}
+        <div class="category-grid__item" {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well category grid",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "text", "id": "section_title", "label": "Title", "default": "Discover by category" },
+    { "type": "text", "id": "section_copy", "label": "Copy", "default": "Browse by intention and let the rest be simple." },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Well category grid",
+      "blocks": [
+        { "type": "link", "settings": { "title": "Hydration & Electrolytes", "url": "/collections/hydration" } },
+        { "type": "link", "settings": { "title": "Appetite & Satiety", "url": "/collections/appetite" } },
+        { "type": "link", "settings": { "title": "Energy & Focus", "url": "/collections/energy" } },
+        { "type": "link", "settings": { "title": "Gut & Regularity", "url": "/collections/gut" } },
+        { "type": "link", "settings": { "title": "Keto-Friendly", "url": "/collections/keto" } },
+        { "type": "link", "settings": { "title": "Bundles", "url": "/collections/bundles" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    {% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+    {% if section.settings.title != blank %}<h2>{{ section.settings.title }}</h2>{% endif %}
+    {% if section.settings.body != blank %}<div class="rte">{{ section.settings.body }}</div>{% endif %}
+    {% if section.settings.cta_label != blank and section.settings.cta_url != blank %}
+      <a href="{{ section.settings.cta_url }}" class="button">{{ section.settings.cta_label }}</a>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well editorial block",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The As Well approach" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Fewer products, better rituals" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>We design essentials that disappear into your day—quiet formulas, transparent labels, no noise. Considered fibres, supportive electrolytes, and actives with a reason to be there. Nothing more.</p>" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Read our standards →" },
+    { "type": "url", "id": "cta_url", "label": "CTA link", "default": "/pages/standards" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "presets": [
+    { "name": "As Well editorial block" }
+  ]
+}
+{% endschema %}

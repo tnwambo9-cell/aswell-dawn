@@ -1,0 +1,54 @@
+{% if section.settings.enabled %}
+<section class="section section--{{ section.settings.background }}" style="padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+  <div class="page-width">
+    {% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+    {% for block in section.blocks %}
+      <div class="grid grid--2-col ingredient-spotlight__row" {{ block.shopify_attributes }}>
+        <div>
+          {% if block.settings.title != blank %}<h3>{{ block.settings.title }}</h3>{% endif %}
+          {% if block.settings.copy != blank %}<div class="rte">{{ block.settings.copy }}</div>{% endif %}
+        </div>
+        {% if block.settings.image != blank %}
+          <div><img src="{{ block.settings.image | default: 'https://via.placeholder.com/800x800' }}" alt="{{ block.settings.title }}"></div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "As Well ingredient spotlight",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable section", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Hero ingredients" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min":0, "max":100, "step":4, "default":36, "unit":"px" },
+    { "type": "select", "id": "background", "label": "Background", "default": "light", "options": [
+      { "value": "light", "label": "Light" },
+      { "value": "neutral", "label": "Neutral" }
+    ]}
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "richtext", "id": "copy", "label": "Copy" },
+        { "type": "image_picker", "id": "image", "label": "Image" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Well ingredient spotlight",
+      "blocks": [
+        { "type": "item", "settings": { "title": "Chromium • the quiet stabiliser", "copy": "<p>Included as chromium picolinate, this trace mineral supports normal macronutrient metabolism and helps maintain normal blood glucose levels—useful alongside high-fibre satiety.*</p>", "image": "https://via.placeholder.com/800x800" } },
+        { "type": "item", "settings": { "title": "Green Coffee • clean lift, calm edge", "copy": "<p>Naturally occurring polyphenols with a gentle caffeine profile. In our Sprinkle Blend it remains taste-neutral; in Wake Gummies it brings focus without the spike.*</p>", "image": "https://via.placeholder.com/800x800" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
